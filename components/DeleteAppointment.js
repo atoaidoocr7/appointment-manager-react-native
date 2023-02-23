@@ -5,7 +5,7 @@ import { deleteData} from '../utilities/requests';
 
 
 const DeleteAppointment = ({id}) => {
-    const [data, setData] = useState({});
+    const [data, setData] = useState(null);
     const [error, setError] = useState("")
 
     async function handleFetch(){

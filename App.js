@@ -4,9 +4,11 @@ import { Ionicons } from '@expo/vector-icons'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import ManageAppointmentsScreen from './screens/ManageAppointmentsScreen';
+
 
 import GetAppointmentScreen from './screens/GetAppointmentScreen';
+import DeleteAppointmentScreen from './screens/DeleteAppointmentScreen';
+import CreateAppointmentScreen from './screens/CreateAppointmentScreen';
 const Stack = createNativeStackNavigator()
 const BottomTab = createBottomTabNavigator()
 
@@ -31,8 +33,17 @@ export default function App() {
           />
 
           <BottomTab.Screen
-            name="Manage Appointments"
-            component={ManageAppointmentsScreen}
+            name="Delete Appointment"
+            component={DeleteAppointmentScreen}
+            options={{
+              tabBarIcon: ({ color, size }) => {
+                return <Ionicons name="calendar" size={size} color={color} />
+              }
+            }}
+          />
+          <BottomTab.Screen
+            name="Create Appointment"
+            component={CreateAppointmentScreen}
             options={{
               tabBarIcon: ({ color, size }) => {
                 return <Ionicons name="calendar" size={size} color={color} />

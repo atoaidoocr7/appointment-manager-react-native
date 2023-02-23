@@ -5,7 +5,7 @@ import { postData} from '../utilities/requests';
 
 
 const CreateAppointment = ({PORT, payload}) => {
-    const [data, setData] = useState({});
+    const [data, setData] = useState(null);
     const [error, setError] = useState("")
 
     async function handleFetch(){
